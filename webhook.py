@@ -1,5 +1,5 @@
 import requests
-def post_data(url, desc, user, link, UID):
+def post_data(url, desc, user, link, UID, tMembers):
     post = {
         "username": "User notifier!",
         "avatar_url": "https://i.boring.host/JE8iEwB.jpg",
@@ -27,6 +27,11 @@ def post_data(url, desc, user, link, UID):
             {
                 "name": "UserID:",
                 "value": UID,
+                "inline": False
+            },
+            {
+                "name": "Total Registered members:",
+                "value": tMembers,
                 "inline": False
             },
         ],
