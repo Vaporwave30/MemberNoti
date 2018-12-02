@@ -10,7 +10,7 @@ def post_data(url, desc, user, link, UID):
             "url": "https://v3rmillion.net/member.php?action=profile&uid=393343",
             "icon_url": "https://i.boring.host/J679G0m.png"
         },
-            "title": "Another new user has signed up to this site!",
+            "title": "Another new user has signed up to V3rm!",
             "description": desc,
             "color": 3843043,
             "fields": [
