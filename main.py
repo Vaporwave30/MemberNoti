@@ -34,7 +34,7 @@ def func():
                     uid = re.sub(r'https://v3rmillion.net/member.php\?action=profile&uid=', "", link)
                     print(uid)
                     print(f'{user}:{link}')
-                    webhook.post_data(url=webhookURL, desc="Found at" + now.strftime("%Y-%m-%d %H:%M"), user=user, link=link, UID=uid)
+                    webhook.post_data(url=webhookURL, desc="Found at " + now.strftime("%Y-%m-%d %H:%M"), user=user, link=link, UID=uid)
                     lastKnownLink = link
                     time.sleep(2)
             except Exception as oof:
