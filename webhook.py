@@ -2,15 +2,15 @@ import requests
 def post_data(url, desc, user, link, UID):
     post = {
         "username": "User notifier!",
-        "avatar_url": "https://i.boring.host/J66Eot2.png",
+        "avatar_url": "https://i.boring.host/JE8iEwB.jpg",
         "embeds": [
         {
             "author": {
             "name": "Vaporwave30",
             "url": "https://v3rmillion.net/member.php?action=profile&uid=393343",
-            "icon_url": "https://i.boring.host/J679G0m.png"
+            "icon_url": "https://i.boring.host/JE8iEwB.jpg"
         },
-            "title": "Another new user has signed up to V3rm!",
+            "title": "Another new user has signed up to this site!",
             "description": desc,
             "color": 3843043,
             "fields": [
