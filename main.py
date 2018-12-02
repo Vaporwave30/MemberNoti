@@ -9,9 +9,10 @@ import datetime
 user = ""
 link = ""
 uid = ""
+totalRegistered = ""
 lastKnownLink = ""
 
-webhookURL = "https://discordapp.com/api/webhooks/518375280042311684/SxL5GzPoTzuamS61b_WHc1Y6qhZwLmTY5ftW7uLMGitciB-Y9gRidLh0lqOcXLyWaOer"
+webhookURL = ""
 myBB = ''
 cookie = requests.cookies.RequestsCookieJar()
 cookie.set('mybbuser', value=myBB, domain='.v3rmillion.net', path='/')
@@ -21,6 +22,7 @@ scraper.cookies = cookie
 def func():
     global link
     global user
+    global totalRegistered
     global lastKnownLink
     while True:
         body = scraper.get("https://v3rmillion.net").text
@@ -29,12 +31,13 @@ def func():
                 link = re.search(r'Please welcome our newest member, <b><a href="(.*?)">', body).group(1)
                 link = re.sub('&amp;', '&', link)
                 if lastKnownLink != link:
+                    totalRegistered = re.search(r"We currently have (.*?) members registered.<br />", body).group(1)
                     user = re.search(r'">(.*?)</a></b><br', body).group(1)
                     uid = re.sub(r'https://v3rmillion.net/member.php\?action=profile&uid=', "", link)
                     print(uid)
                     print(f'{user}:{link}')
                     now = datetime.datetime.now()
-                    webhook.post_data(url=webhookURL, desc="Found at " + now.strftime("%Y-%m-%d %H:%M"), user=user, link=link, UID=uid)
+                    webhook.post_data(url=webhookURL, desc="Found at " + now.strftime("%Y-%m-%d %H:%M"), user=user, link=link, UID=uid, tMembers=totalRegistered)
                     lastKnownLink = link
                     time.sleep(2)
             except Exception as oof:
