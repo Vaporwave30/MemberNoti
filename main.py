@@ -12,7 +12,7 @@ uid = ""
 lastKnownLink = ""
 
 webhookURL = "https://discordapp.com/api/webhooks/518375280042311684/SxL5GzPoTzuamS61b_WHc1Y6qhZwLmTY5ftW7uLMGitciB-Y9gRidLh0lqOcXLyWaOer"
-myBB = '393343_ZuuYc55ZirZAVfPEmhxXupyOPSoj5huEOERLdQr1ZydqaH5Fa0'
+myBB = ''
 cookie = requests.cookies.RequestsCookieJar()
 cookie.set('mybbuser', value=myBB, domain='.v3rmillion.net', path='/')
 scraper = cfscrape.create_scraper()
